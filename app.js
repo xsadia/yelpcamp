@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const Campground = require("./models/campground");
+const seedDB = require("./seeds");
+
 
 mongoose.connect("mongodb://localhost/yelp_camp", {
     useNewUrlParser: true,
@@ -11,27 +14,7 @@ mongoose.connect("mongodb://localhost/yelp_camp", {
 
 .catch((err)=>{console.log(err.message)});
 
-//Schema
-
-const campGroundSchema = new mongoose.Schema({
-    name: String,
-    image: String,
-    description: String
-});
-
-const Campground = mongoose.model("Campground", campGroundSchema);
-
-/* Campground.create({
-    name: "Granite Hill",
-    image: "https://images.pexels.com/photos/699558/pexels-photo-699558.jpeg?auto=compress&cs=tinysrgb&h=350",
-    description: "This is a huge granite hill, no bathrooms, no water, beatiful granite"
-}, (err, campground)=>{
-    if(err){
-        console.log("ERROR: " + err);
-    } else {
-        console.log("Campground added: " + campground);
-    }
-}); */
+seedDB();
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -70,11 +53,12 @@ app.post("/campgrounds", (req, res)=>{
 });
 
 app.get("/campgrounds/:id", function(req, res){
-    Campground.findById(req.params.id, function(err, foundCampground){
+    Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
         if(err) {
             console.log("erro", err);
         } else {
-            res.render("show", {campground: foundCampground});
+          console.log(foundCampground);
+          res.render("show", {campground: foundCampground});
         }
     });
 });
