@@ -3,19 +3,19 @@ const Campground = require("./models/campground");
 const Comment = require("./models/comment");
 const seeds = [
   {
-    name: "choncc's housing",
-    image: "https://vignette.wikia.nocookie.net/leagueoflegends/images/4/4e/Choncc_Base_Tier_1.png/revision/latest/scale-to-width-down/340?cb=20200831002017",
-    description: "Description massa"
+    name: "Choncc's housing",
+    image: "https://images.pexels.com/photos/699558/pexels-photo-699558.jpeg?auto=compress&cs=tinysrgb&h=350",
+    description: "I'm baby church-key art party bitters direct trade, literally tacos irony skateboard hashtag yr post-ironic twee raw denim yuccie. Gluten-free deep v wayfarers, paleo vegan celiac succulents gastropub salvia kinfolk literally biodiesel. Irony af chartreuse gochujang. Fashion axe slow-carb kinfolk deep v. Aesthetic mustache meditation af polaroid +1 blue bottle dreamcatcher meh put a bird on it readymade asymmetrical flannel semiotics chillwave. Prism neutra pug small batch readymade kogi sartorial photo booth vegan XOXO."
   },
   {
-    name: "godo's",
-    image: "https://i.redd.it/fp48vh6rdq231.jpg",
-    description: "Description massa"
+    name: "Godo's creek",
+    image: "https://images.pexels.com/photos/2398220/pexels-photo-2398220.jpeg?auto=compress&cs=tinysrgb&h=350",
+    description: "I'm baby church-key art party bitters direct trade, literally tacos irony skateboard hashtag yr post-ironic twee raw denim yuccie. Gluten-free deep v wayfarers, paleo vegan celiac succulents gastropub salvia kinfolk literally biodiesel. Irony af chartreuse gochujang. Fashion axe slow-carb kinfolk deep v. Aesthetic mustache meditation af polaroid +1 blue bottle dreamcatcher meh put a bird on it readymade asymmetrical flannel semiotics chillwave. Prism neutra pug small batch readymade kogi sartorial photo booth vegan XOXO."
   },
   {
-    name: "pingu",
-    image: "https://i.redd.it/ddwk8kz7na321.jpg",
-    description: "Description massa"
+    name: "Mountain Pingu",
+    image: "https://images.pexels.com/photos/1539225/pexels-photo-1539225.jpeg?auto=compress&cs=tinysrgb&h=350",
+    description: "I'm baby church-key art party bitters direct trade, literally tacos irony skateboard hashtag yr post-ironic twee raw denim yuccie. Gluten-free deep v wayfarers, paleo vegan celiac succulents gastropub salvia kinfolk literally biodiesel. Irony af chartreuse gochujang. Fashion axe slow-carb kinfolk deep v. Aesthetic mustache meditation af polaroid +1 blue bottle dreamcatcher meh put a bird on it readymade asymmetrical flannel semiotics chillwave. Prism neutra pug small batch readymade kogi sartorial photo booth vegan XOXO."
   },
 
 ];
