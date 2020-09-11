@@ -26,7 +26,7 @@ async function seedDB(){
   console.log("campgrounds removed");
   await Comment.deleteMany({});
   console.log("comments removed");
-
+/* 
   for(const seed of seeds) {
     let campground = await Campground.create(seed);
     console.log("campground created");
@@ -40,8 +40,8 @@ async function seedDB(){
     campground.comments.push(comment);
     campground.save();
     console.log("comment added to campground");
-  }
-}
+  }  */
+} 
 
 module.exports = seedDB;
 
