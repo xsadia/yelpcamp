@@ -8,6 +8,7 @@ const passport = require("passport");
 const localStrategy = require("passport-local");
 const User = require("./models/user");
 const seedDB = require("./seeds");
+const methodOverride = require("method-override");
 
 //require routes
 const commentRoutes = require("./routes/comments");
@@ -16,7 +17,8 @@ const authRoutes = require("./routes/auth");
 
 mongoose.connect("mongodb://localhost/yelp_camp", {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
 })
 .then(()=>{console.log("Connected To DataBase")})
 
@@ -26,6 +28,7 @@ mongoose.connect("mongodb://localhost/yelp_camp", {
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs" );
+app.use(methodOverride("_method"));
 
 app.use(require("express-session")({
   secret: "rinne te amo",
