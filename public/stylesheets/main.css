@@ -10,6 +10,10 @@
   padding: 9px;
 }
 
-#delete{
+.delete-form{
   display: inline;
+}
+
+.comment-edit-btn{
+  margin-bottom: 10px;
 }
