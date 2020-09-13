@@ -10,6 +10,7 @@ const localStrategy = require("passport-local");
 const User = require("./models/user");
 const seedDB = require("./seeds");
 const methodOverride = require("method-override");
+const port = process.env.PORT || 1337;
 
 
 //require routes
@@ -54,6 +55,8 @@ app.use(authRoutes);
 app.use("/campgrounds", campgroundsRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(1337, ()=>{
+
+
+app.listen(port, ()=>{
   console.log("Yelp Camp On!");
 });
