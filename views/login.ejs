@@ -1,14 +1,23 @@
 <%- include("partials/header") %>
 <div class="container">
   <div class="row">
-    <div class="col-md-4 centered">
-      <h1>Login</h1>
+      <h1 class="form-header">Login</h1>
+      <div class="form-div">
       <form action="/login" method="POST">
-        <input type="text" class="form-control" name="username" placeholder="Username">
-        <input type="password" class="form-control" name="password" placeholder="Password">
-        <button class="btn btn-primary">Login</button>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" type="text" class="form-control" name="username" placeholder="Username">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary">Login</button>
+          </div>
       </form>
-    </div>
+      <a href="/campgrounds">Back</a>
+      </div>
   </div>
 </div>
 <%- include("partials/footer") %>

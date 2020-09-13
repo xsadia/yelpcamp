@@ -24,13 +24,14 @@ router.get("/new", middleware.isLoggedIn, (req, res)=>{
 //create route
 router.post("/", middleware.isLoggedIn, (req, res)=>{
   const name = req.body.name;
+  const price = req.body.price;
   const image = req.body.img;
   const description = req.body.description;
   const author = {
     id: req.user._id,
     username: req.user.username
   };
-  const newCampground = {name: name, image: image, description: description, author: author};
+  const newCampground = {name: name, image: image, description: description, author: author, price: price};
   Campground.create(newCampground, (err, newlyCreated)=>{
       if(err){
           console.log(err)
@@ -72,8 +73,10 @@ router.put("/:id", middleware.checkCampgroundOwnership, (req, res)=>{
 router.delete("/:id", middleware.checkCampgroundOwnership, (req, res)=>{
   Campground.findByIdAndRemove(req.params.id, (err)=>{
     if(err){
+      req.flash("error", "Something went wrong.");
       res.redirect("/campgrounds");
     } else {
+      req.flash("success", "Campground removed.");
       res.redirect("/campgrounds");
     }
   });

@@ -17,3 +17,18 @@
 .comment-edit-btn{
   margin-bottom: 10px;
 }
+
+.navbar {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.form-header{
+  text-align: center;
+}
+
+.form-div{
+  width: 30%;
+  margin: 25px auto;
+}

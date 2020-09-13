@@ -10,7 +10,6 @@
 
         <div class="row text-center" style="display: flex; flex-wrap: wrap;">
             <% campGrounds.forEach((campground)=>{ %>
-
             <div class="col-md-3 col-sm-6">
                 <div class="thumbnail">
                     <img src="<%= campground.image %>" alt="#">
@@ -20,10 +19,7 @@
                     </p>
                 </div>
             </div>
-                
-
             <% }); %>
         </div>
-        <a class="btn btn-success" href="/">Home</a>
     </div>
 <%- include("../partials/footer") %>

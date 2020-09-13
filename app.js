@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const flash = require("connect-flash");
 const Campground = require("./models/campground");
 const Comment = require("./models/comment");
 const passport = require("passport");
@@ -9,6 +10,7 @@ const localStrategy = require("passport-local");
 const User = require("./models/user");
 const seedDB = require("./seeds");
 const methodOverride = require("method-override");
+
 
 //require routes
 const commentRoutes = require("./routes/comments");
@@ -29,6 +31,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs" );
 app.use(methodOverride("_method"));
+app.use(flash());
 
 app.use(require("express-session")({
   secret: "rinne te amo",
@@ -42,6 +45,8 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 app.use((req, res, next)=>{
   res.locals.currentUser = req.user;
+  res.locals.error = req.flash("error");
+  res.locals.success = req.flash("success");
   next();
 });
 
